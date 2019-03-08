@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        .one{
+            width:400px;
+            
+        }
+        .tit{
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>毕业生信息</h1>
+    <form action="">
+        <fieldset class="one">
+            <legend class="tit">
+                学生信息
+            </legend>
+            姓&nbsp;&nbsp;名&nbsp;<input name="name1" type="text" placeholder="请输入姓名" autofocus="autofocus" required>
+            <font color="red">*</font>
+            <br>
+            学&nbsp;&nbsp;号&nbsp;<input name="snum" type="number" placeholder="请输入学号" required>
+            <font color="red">*</font>
+            <br>
+            手&nbsp;&nbsp;机&nbsp;<input name="tel1" type="tel" placeholder="请输入手机号" required>
+            <font color="red">*</font>
+            <br>
+            邮&nbsp;&nbsp;箱&nbsp;<input name="ema" type="email" placeholder="请输入邮箱地址" required>
+            <font color="red">*</font>
+        </fieldset>
+        <br>
+        <fieldset class="one">
+            <legend class="tit">
+                录取情况
+            </legend>
+            录取学校&nbsp;<input name="school" type="search" list="names">
+            <datalist id="names">
+                <option>北京大学</option>
+                <option>清华大学</option>
+                <option>河北大学</option>
+                <option>河北师范大学</option>
+                <option>河北经贸大学</option>
+                <option>河北科技大学</option>
+            </datalist>
+            <br>
+            入学成绩&nbsp;<input name="sor" type="number">
+            <br>
+            入学时间&nbsp;<input name="time" type="date">
+        </fieldset>
+        <br>
+        <input type="submit" value="提交"/>
+    </form>
+</body>
+</html>
