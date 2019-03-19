@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        ul,li,ol{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;  
+        }
+        #text{
+            width: 180px;
+            height: 40px;
+            border:1px solid #e9b76e;
+        }
+        #addButton{
+            width: 130px;
+            height: 35px;
+            color:slategray;
+        }
+        #new{
+            font-size: 15px;
+        }
+        #big{
+            width: 320px;
+            margin-top:10px;
+            float: left;
+        }
+        #small{
+            float: left;
+            font-size: 15px;
+            height: 20px;
+            margin-right: 8px;
+            margin-bottom: 5px;
+            padding-left: 2px;
+            padding-right: 2px;
+            background-color:lightgrey;   
+        }
+        #removeButton{
+            float:left;
+            margin-top:15px;
+            width: 15px;
+            height: 20px;
+            background-color:lightgrey;
+            color: #fff;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="search" name="search0" id="text" placeholder="请输入想找的商品" autofocus="autofocus">
+        <input type="submit" value="搜索" id="addButton"/>
+    </form>
+    <div id="new">最近搜索</div>
+    <div id="big"></div>
+    <div id="removeButton">X</div>
+    
+
+    <script>
+        var button = document.getElementById("addButton");
+        var remove = document.getElementById("removeButton");
+        //时间数组
+        var timearr = [];
+        for(var i=0;i<localStorage.length;i++){
+            if(localStorage.key(i)){
+                timearr.push(localStorage.key(i));
+            }
+        }
+        //内容数组
+        var innerarr = [];
+        if(timearr.length > 0) {
+            timearr.sort();//排序
+            for (var y = 0; y < timearr.length; y++) {
+                localStorage.getItem(timearr[y]).trim() && innerarr.push(localStorage.getItem(timearr[y]));
+            }
+        }
+        //加载历史记录
+        window.onload = function(){
+             var big = document.getElementById("big");
+            for(var j=innerarr.length-1;j>=0;j--){
+                var div = document.createElement("div");
+                big.appendChild(div);
+                div.innerHTML='<div id="small">'+innerarr[j]+'</div>';
+                
+            }
+        }
+        //新的浏览记录
+        button.onclick = function(){
+            var big0 = document.getElementById("big");
+            var div0 = document.createElement("div");
+            var text = document.getElementById("text").value;
+            var time = new Date().getTime();
+            var flag = true;
+            for(var key in localStorage){
+                if(localStorage.getItem(key)==text){
+                    flag = false;
+                }
+            }
+            if(flag&&text){
+                localStorage.setItem(time, text);
+            }
+            big0.appendChild(div);
+            div0.innerHTML='<div id="small">'+innerarr[innerarr.length-1]+'</div>';
+        }
+        //删除所有记录
+        remove.onclick = function(){
+            localStorage.clear();
+            location.reload();
+        }
+    </script>
+</body>
+</html>
