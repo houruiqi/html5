@@ -55,15 +55,6 @@
         context.lineTo(x,y);
         context.stroke();
     }
-    function click(e){
-        var x = e.clientX-canvas.offsetLeft;
-        var y = e.clientY-canvas.offsetTop;
-        context.beginPath();
-        context.fillStyle="white";
-        context.arc(x,y,10,0,2*Math.PI);
-        context.closePath();
-		context.fill();
-    }
 
     function clear(){
      	var data=context.getImageData(0,0,canvas.width,canvas.height).data;   
@@ -88,7 +79,6 @@
 		clear();
 		canvas.removeEventListener('mousemove',move);
 	}
-    //canvas.addEventListener('click',click);
 	canvas.addEventListener('mousedown',down);
 	canvas.addEventListener('mouseup',clear1);
 </script>
