@@ -48,14 +48,10 @@
     function move(e){
         var x = e.clientX-canvas.offsetLeft;
         var y = e.clientY-canvas.offsetTop;
-        context.strokeStyle="white";
-        context.lineCap="round";
-        context.lineJoin="round";
-        context.lineWidth=20;
-        context.lineTo(x,y);
-        context.stroke();
+        context.arc(x,y,15,0,2*Math.PI);
+        context.fillStyle="white";
+        context.fill();
     }
-
     function clear(){
      	var data=context.getImageData(0,0,canvas.width,canvas.height).data;   
      	for(var i=0,j=0;i<data.length;i+=4){
@@ -72,7 +68,7 @@
      	var x=e.clientX-canvas.offsetLeft;
      	var y=e.clientY-canvas.offsetTop;
      	canvas.addEventListener('mousemove',move);
-        canvas.addEventListener('click',click);
+        canvas.addEventListener('click',move);
         context.moveTo(x,y);
 	}
 	function clear1(){
