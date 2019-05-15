@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #biggest{
+            position: relative;
+            margin-top:20px;
+            margin-left: 20px;
+            overflow: hidden;
+            
+            width: 550px;
+            height: 620px;
+            border: 1px solid rgb(230, 227, 227);
+            box-shadow: 7px 7px 0px 2px rgb(230, 227, 227);
+        }
+        #img0{
+            width: 550px;
+            height: 350px;
+            background-repeat: no-repeat;
+	        background-image: url(img/zhanqiao.jpg);
+	        background-size: cover;
+        }
+        #five{
+            padding-top:5px;
+            width: 60px;
+            height: 55px;
+            position:absolute;
+            background-color: rgb(255, 136, 0);
+            color: white;
+            top:20px;
+            left: 450px;
+            border-radius: 100%;
+            text-align: center;
+        }
+        #img1{
+            position: absolute;
+            top:0px;
+            left: 0px;
+            width: 550px;
+            height: 350px;
+            background: rgba(0,0,0,0.3);
+            display: none;
+        }
+        #h21{
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        p{
+            margin-left: 20px;
+            margin-right: 20px;
+            line-height: 35px;
+            font-size: 20px;
+            color: rgb(163, 162, 162);
+            opacity: 0;
+        }
+        #h22{
+            margin-left: 20px;
+            color:orange;
+        }
+        #biggest:hover p{
+            opacity: 1;
+            transition-property: opacity;
+            transition-duration: 1s;
+        }
+        #biggest:hover #img0{
+            transform: scale(1.2);
+            transition-property: transform;
+            transition-duration: 1s;
+        }
+        #biggest:hover #img1{
+            display: block;
+            
+        }
+        #biggest:hover #text{
+            transform:translate(0px,-150px);
+            transition-property: transform;
+            transition-duration: 1s;
+            background-color: white;
+            padding-top:2px;
+        }
+        #time{
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            color: rgb(163, 162, 162);
+            font-size: 15px;
+        }
+        #zhao{
+            position: absolute;
+            top:325px;
+            left: 0px;
+            background-color: rgb(255, 136, 0);
+            height: 25px;
+            width: 60px;
+            color: white;
+            text-align: center;
+        }
+        #biggest:hover #zhao{
+            transform:translate(0px,-150px);
+            transition-property: transform;
+            transition-duration: 1s;  
+        }
+        #biggest:hover{
+            box-shadow: 7px 7px 0px 2px rgb(199, 196, 196);
+        }
+    </style>
+</head>
+<body>
+    <div id="biggest">
+        <div id="img0"></div>
+        <div id="img1"></div>
+        <div id="five">15<br>五月</div>
+        <div id="zhao">照片</div>   
+        <div id="text">
+            <h2 id="h21">青岛栈桥</h2>
+            <h2 id="h22">国家AAAA级旅游景区</h2>
+            <p>青岛栈桥是青岛海滨风景区的景点之一，是国务院于1982年首批公布的国家级风景名胜区。青岛栈桥位于游人如织的青岛中山路南端，桥身从海岸探入如弯月般的青岛湾深处。桥身供游人参观并在此停靠旅游船，由此乘船可看海上青岛。</p>
+        </div>
+        <div id="time">
+            <div>10分钟前 123评论</div>
+        </div>
+    </div>
+</body>
+</html>
